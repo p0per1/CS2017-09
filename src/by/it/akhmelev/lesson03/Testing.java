@@ -36,20 +36,45 @@ public class Testing {
     }
 
     @Test
+    public void testTaskB1() throws Exception {
+        Testing testing = new Testing(TaskB1.class, "7");
+        testing.contains("49");
+    }
+
+    @Test
+    public void testTaskB2() throws Exception {
+        Testing testing = new Testing(TaskB2.class);
+        testing.contains("20");
+    }
+
+    @Test
+    public void testTaskB3() throws Exception {
+        Testing testing = new Testing(TaskB3.class);
+        testing.contains("C Новым Годом");
+    }
+
+    @Test
     public void testTaskC1() throws Exception {
-        String in="7\n" +
-                "3\n";
-        Testing testing=new Testing(TaskC1.class, in);
+        Testing testing=new Testing(TaskC1.class, "7\n3\n");
         testing.contains("Sum = 10\n");
     }
 
+/*
+===========================================================================================================
+НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
+Но изучить как он работает - можно, это всегда будет полезно.
+===========================================================================================================
+ */
     public Testing() {
+    //Конструктор тестов
     }
 
+    //Конструктор тестов
     private Testing(Class<?> c) {
         this(c,"");
     }
 
+    //Конструктор тестов
     private Testing(Class<?> c, String in) {
         reader=new StringReader(in); //заполнение ввода
         InputStream inputStream = new InputStream() {
@@ -72,17 +97,20 @@ public class Testing {
         System.setOut(oldOut); //возврат вывода
     }
 
+    //проверка вывода
     private void contains(String str) {
         assertTrue("Строка не найдена: " + str + "\n", stringWriter.toString().contains(str));
     }
 
 
 
+    //переменные теста
     private StringWriter stringWriter = new StringWriter();
     private PrintStream oldOut = System.out;
     private StringReader reader;
 
 
+    //поле для перехвата потока вывода
     private PrintStream newOut;
     {
         newOut = new PrintStream(new OutputStream() {
@@ -90,23 +118,23 @@ public class Testing {
 
             @Override
             public void write(int b) throws IOException {
-                if (b < 0) {
-                    if (bytes[0] == 0) {
-                        bytes[0] = (byte) b;
+                if (b < 0) { //ловим и собираем двухбайтовый UTF (первый код > 127, или в байте <0)
+                    if (bytes[0] == 0) { //если это первый байт
+                        bytes[0] = (byte) b; //то запомним его
                     } else {
-                        bytes[1] = (byte) b;
-                        String s = new String(bytes);
-                        stringWriter.append(s);
-                        oldOut.append(s);
-                        bytes[0] = 0;
+                        bytes[1] = (byte) b; //иначе это второй байт
+                        String s = new String(bytes); //соберем весь символ
+                        stringWriter.append(s); //запомним вывод для теста
+                        oldOut.append(s); //копию в обычный вывод
+                        bytes[0] = 0; //забудем все.
                     }
                 } else {
+                    char c = (char) b; //ловим и собираем однобайтовый UTF
                     bytes[0] = 0;
-                    char c = (char) b;
                     if (c != '\r') {
-                        stringWriter.write(c);
+                        stringWriter.write(c); //запомним вывод для теста
                     }
-                    oldOut.write(c);
+                    oldOut.write(c); //копию в обычный вывод
                 }
             }
         });
