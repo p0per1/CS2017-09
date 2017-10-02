@@ -5,7 +5,7 @@ package by.it.akhmelev.lesson03;
 3*3+4*4=25
  */
 
-public class TaskA3 {
+class TaskA3 {
     public static void main(String[] args) {
         int i = 2;
         int j = 3;

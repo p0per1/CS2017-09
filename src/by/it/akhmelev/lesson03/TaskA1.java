@@ -1,6 +1,6 @@
 package by.it.akhmelev.lesson03;
 
-public class TaskA1 {
+class TaskA1 {
 /*
 напишите программу которая выводит на экран
 Hello world!

@@ -14,7 +14,7 @@ package by.it.akhmelev.lesson03;
 4. Знаки плюс и минус должны быть расставлены правильно.
 
  */
-public class TaskB2 {
+class TaskB2 {
     private static int a = 1;
     private static int b = 3;
     private static int c = 9;

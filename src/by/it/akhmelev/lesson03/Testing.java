@@ -55,28 +55,54 @@ public class Testing {
 
     @Test
     public void testTaskC1() throws Exception {
-        Testing testing=new Testing(TaskC1.class, "7\n3\n");
+        Testing testing = new Testing(TaskC1.class, "7\n3\n");
         testing.contains("Sum = 10\n");
     }
 
-/*
-===========================================================================================================
-НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
-Но изучить как он работает - можно, это всегда будет полезно.
-===========================================================================================================
- */
+    @Test
+    public void testTaskC2() throws Exception {
+        Testing testing = new Testing(TaskC2.class, "34\n26\n");
+        testing.contains(
+                "DEC:34+26=60\n" +
+                        "BIN:100010+11010=111100\n" +
+                        "HEX:22+1a=3c\n" +
+                        "OKT:42+32=74\n");
+    }
+
+    @Test
+
+    public void testTaskC3() throws Exception {
+        Testing testing = new Testing(TaskC3.class, "75\n");
+        testing.contains("29.51\n");
+        testing = new Testing(TaskC3.class, "100\n");
+        testing.contains("39.35\n");
+        try {
+            Method m = TaskC3.class.getDeclaredMethod("getWeight", int.class);
+            assertEquals((Double) m.invoke(null, 100), 39.35, 1e-100);
+            assertEquals((Double) m.invoke(null, 75), 29.51, 1e-100);
+        } catch (NoSuchMethodException e) {
+            org.junit.Assert.fail("Метод getWeight не найден");
+        }
+    }
+
+    /*
+    ===========================================================================================================
+    НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
+    Но изучить как он работает - можно, это всегда будет полезно.
+    ===========================================================================================================
+     */
     public Testing() {
-    //Конструктор тестов
+        //Конструктор тестов
     }
 
     //Конструктор тестов
     private Testing(Class<?> c) {
-        this(c,"");
+        this(c, "");
     }
 
     //Конструктор тестов
     private Testing(Class<?> c, String in) {
-        reader=new StringReader(in); //заполнение ввода
+        reader = new StringReader(in); //заполнение ввода
         InputStream inputStream = new InputStream() {
             @Override
             public int read() throws IOException {
@@ -103,7 +129,6 @@ public class Testing {
     }
 
 
-
     //переменные теста
     private StringWriter stringWriter = new StringWriter();
     private PrintStream oldOut = System.out;
@@ -112,6 +137,7 @@ public class Testing {
 
     //поле для перехвата потока вывода
     private PrintStream newOut;
+
     {
         newOut = new PrintStream(new OutputStream() {
             private byte bytes[] = new byte[2];
