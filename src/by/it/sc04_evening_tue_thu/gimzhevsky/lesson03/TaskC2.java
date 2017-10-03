@@ -17,10 +17,13 @@ OKT:42+32=74
 */
 class TaskC2 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);;
+        Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
         int j = sc.nextInt();
-      //s  System.out.println("Sum = " + sum);
+        System.out.println("DEC:" + i + "+" + j + "=" + (i+j));
+        System.out.println("BIN:" + Integer.toBinaryString(i) + "+" + Integer.toBinaryString(j) + "=" + Integer.toBinaryString(i+j));
+        System.out.println("HEX:" + Integer.toHexString(i) + "+" + Integer.toHexString(j) + "=" + Integer.toHexString(i+j));
+        System.out.println("OKT:" + Integer.toOctalString(i) + "+" + Integer.toOctalString(j) + "=" + Integer.toOctalString(i+j));
     }
 
 }
