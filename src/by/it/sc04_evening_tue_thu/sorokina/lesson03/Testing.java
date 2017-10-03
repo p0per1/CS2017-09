@@ -1,11 +1,12 @@
-package by.it.akhmelev.lesson03;
+package by.it.sc04_evening_tue_thu.sorokina.lesson03;
 
 import org.junit.Test;
 
 import java.io.*;
 import java.lang.reflect.Method;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 //поставьте курсор на следующую строку и нажмите Ctrl+Shift+F10
 public class Testing {
