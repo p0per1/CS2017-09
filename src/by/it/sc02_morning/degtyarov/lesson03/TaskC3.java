@@ -1,5 +1,7 @@
 package by.it.sc02_morning.degtyarov.lesson03;
 
+import java.util.Scanner;
+
 /*
 Ускорение свободного падения на Земле и Марсе таково:
 Марс   3,86
@@ -15,17 +17,17 @@ package by.it.sc02_morning.degtyarov.lesson03;
 4. Метод getWeight не должен ничего выводить на экран.
 5. Метод getWeight должен правильно переводить вес тела в килограммах на Земле
     в вес этого же тела на Марсе, и возвращать это значение.
-
 Пример:
-
 Ввод:
 75
-
 Вывод:
 29.51
-
-
 */
 class TaskC3 {
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double i = sc.nextInt();
+        double j = i * 3.86 / 9.81;
+        System.out.printf("%.2f", j);
+    }
 }
