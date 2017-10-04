@@ -19,8 +19,7 @@ class TaskC2 {
     public static void main(String[] args) {
        Scanner sc=new Scanner(System.in);
         int i=sc.nextInt();
-        Scanner scj=new Scanner(System.in);
-        int j=scj.nextInt();
+        int j=sc.nextInt();
         int res=i+j;
         System.out.println("Вывод:");
         System.out.println("DEC:"+i+"+"+j+"="+res);

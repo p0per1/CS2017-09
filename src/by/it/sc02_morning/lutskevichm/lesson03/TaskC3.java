@@ -29,14 +29,14 @@ import java.util.Scanner;
 
 */
 class TaskC3 {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
    Scanner sc=new Scanner(System.in);
    int i=sc.nextInt();
 
         System.out.println(String.format("%.2f",getWeight(i)));
        }
-       private static double getWeight(int i){
-        double weight=(i*3.86/9.81);
-        return weight;
-    }
+       static double getWeight(int j){
+       double k =(j*3.86/9.81);
+       return k;
+            }
 }
