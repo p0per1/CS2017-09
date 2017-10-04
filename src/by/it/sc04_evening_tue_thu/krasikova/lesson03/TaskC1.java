@@ -14,22 +14,22 @@ import java.util.Scanner;
 
 class TaskC1 {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Ввод:");
-        int i=sc.nextInt();
+        int i = sc.nextInt();
         System.out.print(i);
         System.out.print(" ");
-        int d=sc.nextInt();
+        int d = sc.nextInt();
         System.out.print(d);
         System.out.println("");
-        int sum=i + d;
+        int sum = i + d;
         System.out.print("Sum");
         System.out.print(" = ");
         System.out.println(sum);
     }
 
 
-    }
+}
 
 
 
