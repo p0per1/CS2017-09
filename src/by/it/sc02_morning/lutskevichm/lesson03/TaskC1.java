@@ -13,8 +13,8 @@ Sum = 26
 */
 class TaskC1 {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int i=sc.nextInt();
+        Scanner sci=new Scanner(System.in);
+        int i=sci.nextInt();
         Scanner scj=new Scanner(System.in);
         int j=scj.nextInt();
         int res=i+j;
