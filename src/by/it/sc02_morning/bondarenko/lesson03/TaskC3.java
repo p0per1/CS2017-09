@@ -34,7 +34,7 @@ class TaskC3 {
         int i = sc.nextInt();
         System.out.println(getWeight(i));
     }
-    private static double getWeight(int weight) {
+    static double getWeight(int weight) {
         double j=Math.round(weight/9.81*3.86*100);
         return j/100;
     }
