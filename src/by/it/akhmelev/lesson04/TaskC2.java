@@ -20,18 +20,12 @@ package by.it.akhmelev.lesson04;
     5. Метод sumDigitsInNumber должен правильно возвращать сумму всех цифр в числе number.
 */
 public class TaskC2 {
-    static int sumDigitsInNumber(int in){
-        char[] ch=Integer.toString(in).toCharArray();
-        int res=0;
-        for (char c:ch) {
-            res+=Integer.parseInt(String.valueOf(c));
-        }
-        return res;
-    }
 
-    public static void main(String[] args) {
-        System.out.println(sumDigitsInNumber(5467));
-    }
 
+
+
+//    public static void main(String[] args) {
+//        System.out.println(sumDigitsInNumber(5467));
+//    }
 
 }
