@@ -26,6 +26,11 @@ package by.it.sc04_evening_tue_thu.runec.lesson03;
 
 
 */
+
 class TaskC3 {
 
-}
+
+
+    }
+
+
