@@ -32,11 +32,10 @@ class TaskC3 {
    public static void main(String[] args) {
    Scanner sc=new Scanner(System.in);
    int i=sc.nextInt();
-
         System.out.println(String.format("%.2f",getWeight(i)));
        }
        static double getWeight(int j){
-       double k =(j*3.86/9.81);
+       double k=(j*3.86/9.81);
        return k;
-            }
+       }
 }
