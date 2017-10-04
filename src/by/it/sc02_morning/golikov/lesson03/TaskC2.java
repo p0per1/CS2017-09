@@ -15,7 +15,6 @@ BIN:100010+11010=111100
 HEX:22+1a=3c
 OKT:42+32=74
 */
-import java.util.Scanner;
 class TaskC2 {
         public static void main(String[] args) {
             Scanner sc1 = new Scanner(System.in);
