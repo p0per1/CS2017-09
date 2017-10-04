@@ -45,7 +45,7 @@ class TaskC2 {
         System.out.print(Integer.toHexString(a));
         System.out.print("=");
         System.out.println(Integer.toHexString(sum));
-        System.out.print("OCT:");
+        System.out.print("OKT:");
         System.out.print(Integer.toOctalString(i));
         System.out.print("+");
         System.out.print(Integer.toOctalString(a));
