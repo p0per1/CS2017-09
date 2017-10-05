@@ -17,7 +17,7 @@ public class Testing {
         testing.contains("Hello world!");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void testTaskA2() throws Exception {
         Testing testing = new Testing(TaskA2.class);
         testing.contains(
