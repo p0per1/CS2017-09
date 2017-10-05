@@ -1,4 +1,6 @@
-package by.it.sc04_evening_tue_thu.krasikova.lesson03;
+package by.it.sc04_evening_tue_thu.tokun.lesson03;
+
+import java.util.Scanner;
 
 /*
 Ускорение свободного падения на Земле и Марсе таково:
@@ -26,31 +28,18 @@ package by.it.sc04_evening_tue_thu.krasikova.lesson03;
 
 
 */
-
-import java.util.Scanner;
-
-
 class TaskC3 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-        System.out.println("Ввод:");
-        System.out.println(i);
-        System.out.println("");
-        System.out.println("Вывод:");
-        System.out.println(String.format("%(.2f", getWeight(i)));
-
+                int a = sc.nextInt();
+                double b =  getWeight(a);
+        System.out.println(b);
     }
 
-    public static double getWeight(double x) {
-        double weightMars;
-        weightMars= 3.86 / 9.81 * x;
-        return weightMars;
-
+    public static double getWeight(int a) {
+        double mars = 3.86;
+        double earth = 9.81;
+        double weight = Math.rint(100.0 * (a/earth*mars)) / 100.0;
+        return weight;
     }
-    }
-
-
-
-
+ }

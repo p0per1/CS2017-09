@@ -1,4 +1,8 @@
-package by.it.sc04_evening_tue_thu.krasikova.lesson03;
+package by.it.sc04_evening_tue_thu.sorokina.lesson03;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.Scanner;
 
 /*
 Ускорение свободного падения на Земле и Марсе таково:
@@ -26,31 +30,23 @@ package by.it.sc04_evening_tue_thu.krasikova.lesson03;
 
 
 */
-
-import java.util.Scanner;
-
-
 class TaskC3 {
+    private static int a;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-        System.out.println("Ввод:");
-        System.out.println(i);
-        System.out.println("");
-        System.out.println("Вывод:");
-        System.out.println(String.format("%(.2f", getWeight(i)));
+    public static void main( String[] args) {
+        Scanner sc=new Scanner(System.in);
+            int weightOnEarth=sc.nextInt();
+            double weightOnMars = getWeight(weightOnEarth);
 
-    }
-
-    public static double getWeight(double x) {
-        double weightMars;
-        weightMars= 3.86 / 9.81 * x;
-        return weightMars;
+        weightOnMars = new BigDecimal(weightOnMars).setScale(2, RoundingMode.UP).doubleValue();
+        System.out.println(weightOnMars);
 
     }
-    }
+
+static double getWeight(int a){
+        return a/9.81*3.86;
+
+}
 
 
-
-
+}
