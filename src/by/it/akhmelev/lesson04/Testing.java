@@ -53,7 +53,7 @@ public class Testing {
         testing.contains("-1.0");
         testing.contains("-1.5");
         testing = new Testing(TaskB2.class, "2 4 2");
-        testing.contains("-1.0");
+        testing.contains("-1.0\n");
         testing = new Testing(TaskB2.class, "2 2 2");
         testing.contains("Отрицательный дискриминант");
     }
