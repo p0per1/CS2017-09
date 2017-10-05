@@ -1,6 +1,5 @@
 package by.it.akhmelev.lesson03;
 
-
 class TaskA1 {
 /*
 напишите программу которая выводит на экран
