@@ -50,9 +50,10 @@ public class Testing {
     public void testTaskB2() throws Exception {
         Testing testing;
         testing = new Testing(TaskB2.class, "2 5 3");
-        testing.contains("-4.75 -5.25\n");
+        testing.contains("-1.0");
+        testing.contains("-1.5");
         testing = new Testing(TaskB2.class, "2 4 2");
-        testing.contains("-1\n");
+        testing.contains("-1.0");
         testing = new Testing(TaskB2.class, "2 2 2");
         testing.contains("Отрицательный дискриминант");
     }
