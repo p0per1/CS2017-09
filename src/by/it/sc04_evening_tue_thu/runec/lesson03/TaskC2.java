@@ -16,10 +16,12 @@ OKT:42+32=74
 import java.util.Scanner;
 class TaskC2 {
     public static void main(String[] args) {
+        System.out.println("Ввод:");
         Scanner s = new Scanner(System.in);
         int a = s.nextInt();
         int b = s.nextInt();
         int sum = a + b;
+        System.out.println("Вывод:");
         System.out.println("DEC:" + a + "+" + b + "=" + sum);
         System.out.println("BIN:"+Integer.toBinaryString(a)+"+"+Integer.toBinaryString(b)+"="+Integer.toBinaryString(sum));
         System.out.println("HEX:"+Integer.toHexString(a)+"+"+Integer.toHexString(b)+"="+Integer.toHexString(sum));

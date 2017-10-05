@@ -27,10 +27,33 @@ package by.it.sc04_evening_tue_thu.runec.lesson03;
 
 */
 
+import java.util.Scanner;
 class TaskC3 {
 
+    public static void main(String[] args){
+                System.out.println("Ввод:");
+
+                      Scanner sc = new Scanner(System.in);
+               int earthWeightKg = sc.nextInt();
+
+                       System.out.println("Вывод:");
+               double weightMarsKg = getWeight(earthWeightKg);
+               System.out.println(weightMarsKg);
+           }
+
+            public static double getWeight(int aEarthWeightKg){
+               double gravityEarth = 9.81;
+               double gravityMars = 3.86;
+                     double marsWeightKg = aEarthWeightKg * gravityMars / gravityEarth;
+
+                     return Math.round(marsWeightKg * 100.0) / 100.0;
+            }
 
 
     }
+
+
+
+
 
 
