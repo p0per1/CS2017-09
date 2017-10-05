@@ -1,5 +1,9 @@
 package by.it.sc04_evening_tue_thu.bukhtik.lesson03;
 
+import java.util.Scanner;
+
+import static java.lang.Math.*;
+
 /*
 Ускорение свободного падения на Земле и Марсе таково:
 Марс   3,86
@@ -27,5 +31,22 @@ package by.it.sc04_evening_tue_thu.bukhtik.lesson03;
 
 */
 class TaskC3 {
+    public static void main(String[] args) {
 
-}
+        Scanner sc=new Scanner(System.in);
+        int i=sc.nextInt();
+
+        double k=getWeight(i);
+        System.out.println(k);
+    }
+
+    public static double getWeight(int i){
+
+        double weight = (i/9.81*3.86)*100;
+        int j = (int) Math.round(weight);
+        weight = (double)j / 100;
+        return weight;
+        }
+
+    }
+
