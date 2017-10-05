@@ -34,7 +34,6 @@ class TaskC3 {
                 int a = sc.nextInt();
                 double b =  getWeight(a);
         System.out.println(b);
-
     }
 
     public static double getWeight(int a) {
