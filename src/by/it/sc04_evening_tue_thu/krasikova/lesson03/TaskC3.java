@@ -44,6 +44,8 @@ public static double getWeight(int weightMars){
 double a=sc.nextInt();
 double g=3.86;
 
+
+
 return weightMars;
 
 }
